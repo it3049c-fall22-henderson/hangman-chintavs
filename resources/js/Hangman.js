@@ -39,7 +39,6 @@ class Hangman {
   async start(difficulty, next) {
     // get word and set it to the class's this.word
     this.word = await this.getRandomWord(difficulty);
-    console.log(this.word);
     // clear canvas
     this.clearCanvas();
     // draw base

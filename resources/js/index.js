@@ -39,6 +39,10 @@ try {
       startWrapper.classList.add(`hidden`);
       // show the gameWrapper
       gameWrapper.classList.remove(`hidden`);
+      // enable input
+      guessInput.disabled = false;
+      // enable button
+      guessButton.disabled = false;
       // call the game getWordHolderText and set it to the wordHolderText
       wordHolderText.innerHTML = game.getWordHolderText();
       // call the game getGuessessText and set it to the guessesText
@@ -64,11 +68,12 @@ try {
     // Check if the game isOver:
     if (game.isOver) {
       // 1. disable the guessInput
-      guessInput.disable = true;
+      guessInput.disabled = true;
       // 2. disable the guessButton
-      guessButton.disable = true;
+      guessButton.disabled = true;
       // 3. show the resetGame button
       resetGame.classList.remove(`hidden`);
+      resetGame.classList.add(`btn`);
 
       // if the game is won or lost, show an alert.
       if (game.didWin) {
@@ -76,7 +81,7 @@ try {
       }
       else
       {
-        alert(`You Lost`);
+        alert(`You Lost - Word was: ` + game.word);
       }
     }
   });
@@ -88,6 +93,9 @@ try {
     startWrapper.classList.remove(`hidden`);
     // hide the gameWrapper
     gameWrapper.classList.add(`hidden`);
+    // hide reset button
+    resetGame.classList.remove(`btn`);
+    resetGame.classList.add(`hidden`);
   });
 } catch (error) {
   console.error(error);
