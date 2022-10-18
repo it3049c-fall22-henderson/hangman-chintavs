@@ -7,6 +7,8 @@
                 display: none;
             }
         </style>
+        <link rel="stylesheet" href="resources/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="resources/css/styles.css" />
     </head>
 
     <body>
@@ -18,7 +20,7 @@
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
-                <input type="submit" value="Start!" />
+                <input type="submit" value="Start!" class="btn btn-success" />
             </form>
         </div>
         <div id="gameWrapper" class="hidden">
@@ -28,11 +30,9 @@
                     id="guessInput"
                     placeholder="Guess a letter!"
                 />
-                <input type="submit" id="guessSubmitButton" value="Guess" />
+                <input type="submit" id="guessSubmitButton" class="btn btn-primary" value="Guess" />
             </form>
-            <button type="button" id="resetGame" class="hidden">
-                Play Again!
-            </button>
+            <button type="button" id="resetGame" class="btn-primary hidden">Play Again!</button>
             <div id="guesses"></div>
             <br />
             <div id="wordHolder"></div>
